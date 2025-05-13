@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  server:
+    build: .
+    container_name: rbac-server
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - MONGODB_URI=mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:${MONGO_PORT}/${MONGO_DATABASE}?authSource=admin
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongodb
+    networks:
+      - rbac-network
+    restart: unless-stopped
+  
+
+  mongodb:
+    image: mongo:latest
+    container_name: rbac-mongodb
+    ports:
+      - "${MONGO_PORT}:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_INITDB_DATABASE=${MONGO_DATABASE}
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - rbac-network
+
+networks:
+  rbac-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
