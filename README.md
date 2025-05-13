@@ -56,6 +56,112 @@ docker-compose down
 npm run start:dev
 ```
 
+## API Endpoints
+
+### Authentication & User Management
+
+#### Registration
+- `POST /api/register-se` - Đăng ký tài khoản Software Engineer
+- `POST /api/register-marketer` - Đăng ký tài khoản Marketer
+- `POST /api/register-hr` - Đăng ký tài khoản Human Resource
+
+#### Login
+- `POST /api/login-se` - Đăng nhập với tài khoản Software Engineer
+- `POST /api/login-marketer` - Đăng nhập với tài khoản Marketer
+- `POST /api/login-hr` - Đăng nhập với tài khoản Human Resource
+
+#### Protected Routes
+- `GET /api/se-protected` - Route được bảo vệ cho Software Engineers
+- `GET /api/marketers-protected` - Route được bảo vệ cho Marketers
+- `GET /api/hr-protected` - Route được bảo vệ cho Human Resource
+- `POST /api/protected` - Route được bảo vệ chung (yêu cầu JWT)
+
+### Request/Response Format
+
+#### Registration Request
+```json
+{
+  "name": "string",
+  "email": "string",
+  "password": "string"
+}
+```
+
+#### Login Request
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
+
+#### Protected Route Response
+```json
+{
+  "message": "welcome {role} - {name}"
+}
+```
+
+### Authentication
+- Tất cả các protected routes yêu cầu JWT token trong header:
+  ```
+  Authorization: Bearer <token>
+  ```
+- Mỗi role (se, marketer, hr) chỉ có thể truy cập các routes được phép
+- Token được tạo khi đăng nhập thành công## API Endpoints
+
+### Authentication & User Management
+
+#### Registration
+- `POST /api/register-se` - Đăng ký tài khoản Software Engineer
+- `POST /api/register-marketer` - Đăng ký tài khoản Marketer
+- `POST /api/register-hr` - Đăng ký tài khoản Human Resource
+
+#### Login
+- `POST /api/login-se` - Đăng nhập với tài khoản Software Engineer
+- `POST /api/login-marketer` - Đăng nhập với tài khoản Marketer
+- `POST /api/login-hr` - Đăng nhập với tài khoản Human Resource
+
+#### Protected Routes
+- `GET /api/se-protected` - Route được bảo vệ cho Software Engineers
+- `GET /api/marketers-protected` - Route được bảo vệ cho Marketers
+- `GET /api/hr-protected` - Route được bảo vệ cho Human Resource
+- `POST /api/protected` - Route được bảo vệ chung (yêu cầu JWT)
+
+### Request/Response Format
+
+#### Registration Request
+```json
+{
+  "name": "string",
+  "email": "string",
+  "password": "string"
+}
+```
+
+#### Login Request
+```json
+{
+  "email": "string",
+  "password": "string"
+}
+```
+
+#### Protected Route Response
+```json
+{
+  "message": "welcome {role} - {name}"
+}
+```
+
+### Authentication
+- Tất cả các protected routes yêu cầu JWT token trong header:
+  ```
+  Authorization: Bearer <token>
+  ```
+- Mỗi role (se, marketer, hr) chỉ có thể truy cập các routes được phép
+- Token được tạo khi đăng nhập thành công
+
 ## Docker Commands
 
 ### Xóa cache và build lại

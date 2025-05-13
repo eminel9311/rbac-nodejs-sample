@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "21619a95-3ded-4963-bff0-006f9ab1ae4c",
+		"name": "rbac-simple-nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2098448"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/register-se",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"eminel\",\r\n    \"email\": \"eminel@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register-se",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register-se"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login-se",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"eminel@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login-se",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login-se"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login-hr",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"hr1@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login-hr",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login-hr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/login-marketer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"marketer1@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login-marketer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login-marketer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/register-marketer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"marketer 1\",\r\n    \"email\": \"marketer1@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register-marketer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register-marketer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/register-hr",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hr 1\",\r\n    \"email\": \"hr1@gmail.com\",\r\n    \"password\": \"abc@123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register-hr",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register-hr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/se-protected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMwMjIxYTg1MmIzYmRjZmIyY2Y2ZCIsInJvbGUiOiJzZSIsIm5hbWUiOiJlbWluZWwiLCJlbWFpbCI6ImVtaW5lbEBnbWFpbC5jb20iLCJpYXQiOjE3NDcxMjc0MjUsImV4cCI6MTc0NzIxMzgyNX0.nMgFOcEwYlfc9qRdnPQYaQsSSWt7GlciTMEbEPi77Pg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/se-protected",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"se-protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/marketers-protected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMwMjIxYTg1MmIzYmRjZmIyY2Y2ZCIsInJvbGUiOiJzZSIsIm5hbWUiOiJlbWluZWwiLCJlbWFpbCI6ImVtaW5lbEBnbWFpbC5jb20iLCJpYXQiOjE3NDcxMjc0MjUsImV4cCI6MTc0NzIxMzgyNX0.nMgFOcEwYlfc9qRdnPQYaQsSSWt7GlciTMEbEPi77Pg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/marketers-protected",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"marketers-protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/hr-protected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMwMjIxYTg1MmIzYmRjZmIyY2Y2ZCIsInJvbGUiOiJzZSIsIm5hbWUiOiJlbWluZWwiLCJlbWFpbCI6ImVtaW5lbEBnbWFpbC5jb20iLCJpYXQiOjE3NDcxMjc0MjUsImV4cCI6MTc0NzIxMzgyNX0.nMgFOcEwYlfc9qRdnPQYaQsSSWt7GlciTMEbEPi77Pg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/marketers-protected",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"marketers-protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/protected",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMwMjIxYTg1MmIzYmRjZmIyY2Y2ZCIsInJvbGUiOiJzZSIsIm5hbWUiOiJlbWluZWwiLCJlbWFpbCI6ImVtaW5lbEBnbWFpbC5jb20iLCJpYXQiOjE3NDcxMjc0MjUsImV4cCI6MTc0NzIxMzgyNX0.nMgFOcEwYlfc9qRdnPQYaQsSSWt7GlciTMEbEPi77Pg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/marketers-protected",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"marketers-protected"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
