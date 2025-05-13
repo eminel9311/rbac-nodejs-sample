@@ -55,30 +55,6 @@ docker-compose down
 # Chạy với nodemon (hot-reload)
 npm run start:dev
 ```
-## API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Đăng ký tài khoản
-- `POST /api/auth/login` - Đăng nhập
-- `POST /api/auth/logout` - Đăng xuất
-
-### Users
-- `GET /api/users` - Lấy danh sách users
-- `GET /api/users/:id` - Lấy thông tin user
-- `PUT /api/users/:id` - Cập nhật thông tin user
-- `DELETE /api/users/:id` - Xóa user
-
-### Roles
-- `GET /api/roles` - Lấy danh sách roles
-- `POST /api/roles` - Tạo role mới
-- `PUT /api/roles/:id` - Cập nhật role
-- `DELETE /api/roles/:id` - Xóa role
-
-### Permissions
-- `GET /api/permissions` - Lấy danh sách permissions
-- `POST /api/permissions` - Tạo permission mới
-- `PUT /api/permissions/:id` - Cập nhật permission
-- `DELETE /api/permissions/:id` - Xóa permission
 
 ## Docker Commands
 
